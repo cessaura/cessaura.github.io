@@ -38,5 +38,6 @@ axe-core: 0 violations in English and Krio modes.
 
 ## Credits
 
+- Design and build: Mohamed Alpha Kamara.
 - Logo, product photos, customer photos and video: CESSAURA, used with the owner’s permission. Logo traced to SVG for this page.
 - Icons: drawn for this page. Fonts: the phone’s own system fonts.
