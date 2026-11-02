@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"CESSAURA","slogan":"Your Beauty, Your Aura.","url":"https://cessaura.github.io/","image":"https://cessaura.github.io/img/og.jpg","telephone":"+23277794025","email":"rugiatuswaray20@icloud.com","currenciesAccepted":"SLE","paymentAccepted":"Orange Money, Afrimoney, Cash on delivery","address":{"@type":"PostalAddress","streetAddress":"CRS, by Conex Fuel Station","addressLocality":"Grafton, Freetown","addressCountry":"SL"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"makesOffer":{"@type":"Offer","itemOffered":{"@type":"Product","name":"French curls hair extensions, 24 and 30 inch"},"price":"110","priceCurrency":"SLE"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"CESSAURA","slogan":"Your Beauty, Your Aura.","url":"https://cessaura.github.io/","image":"https://cessaura.github.io/img/og.jpg","telephone":"+23277794025","email":"rugiatuswaray20@icloud.com","currenciesAccepted":"SLE","paymentAccepted":"Orange Money, Afrimoney, Cash on delivery","address":{"@type":"PostalAddress","streetAddress":"CRS, near ICODEHS Central Mosque, by Conex Fuel Station","addressLocality":"Grafton, Freetown","addressCountry":"SL"},"geo":{"@type":"GeoCoordinates","latitude":8.40403,"longitude":-13.166852},"hasMap":"https://www.google.com/maps/search/?api=1&query=8.40403,-13.166852","founder":{"@type":"Person","name":"Cess"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"makesOffer":{"@type":"Offer","itemOffered":{"@type":"Product","name":"French curls hair extensions, 24 and 30 inch"},"price":"110","priceCurrency":"SLE"}}</script>
 <style>
 :root{--bg:#fffdf8;--paper:#fff;--ink:#14110c;--mute:#5c5345;--line:#eadfc6;--gold:#8d6114;--gold2:#c9952e;--gold3:#f2cf73;--black:#0f0d0a;--wa:#25d366;--wa-ink:#062b13;--r:18px;color-scheme:light;
   --metal:linear-gradient(135deg,#f6dc8a 0%,#c9952e 45%,#f2cf73 70%,#9c6b1a 100%)}
@@ -170,6 +170,11 @@ tr.today{background:#fbf3df}
 tr.today th{box-shadow:inset 4px 0 0 var(--gold2);font-weight:800}
 .closed{color:var(--mute);font-weight:600}
 
+.owner{display:grid;grid-template-columns:120px 1fr;gap:14px 16px;align-items:center}
+.owner img{width:120px;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:3px solid transparent;background:var(--metal) border-box}
+.owner p{margin:0;color:var(--mute)}
+.owner b{display:block;font-family:Georgia,serif;font-size:1.25rem;color:var(--ink);font-weight:400;margin-bottom:4px}
+.pin{display:flex;gap:10px;align-items:flex-start;margin:12px 0 0;color:var(--mute);font-size:.95rem}
 .lux{margin-top:42px;padding:26px 18px;border-radius:22px;text-align:center;background:var(--black);color:#fff;border:2px solid var(--gold2)}
 .lux h2{color:var(--gold3)}
 .lux p{color:#e7dcc2;margin:8px 0 16px}
@@ -285,6 +290,18 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
     </ul>
   </section>
 
+  <section aria-labelledby="h-owner">
+    <h2 id="h-owner" data-kri="Mit <em>Cess</em>">Meet <em>Cess</em></h2>
+    <span class="h2k" lang="kri" data-kri="Meet Cess" data-flip>Mit Cess</span>
+    <div class="card owner">
+      <img src="img/cess.webp" width="360" height="480" alt="Cess, founder of CESSAURA, in a lime green halter top with gold earrings" loading="lazy" decoding="async">
+      <div><b data-kri="Cess, di wan we gɛt CESSAURA">Cess, founder of CESSAURA</b>
+        <p data-kri="Cess de rɔn CESSAURA frɔm Grafton. Ɛni oda de go dairɛkt to am pan WhatsApp.">Cess runs CESSAURA from Grafton. Every order goes straight to her on WhatsApp.</p>
+      </div>
+      <a class="btn wa" style="grid-column:1/-1" data-wa data-msg="gen" href="https://wa.me/23277794025?text=Hello%20CESSAURA%2C%20I%20want%20to%20order%20French%20curls."><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-wa"/></svg><span data-kri="Chat wit Cess">Chat with Cess</span></a>
+    </div>
+  </section>
+
   <section class="lux" aria-labelledby="h-fash">
     <h2 id="h-fash" data-kri="Fashɔn ɛn layfstayl">Fashion and lifestyle</h2>
     <p data-kri="Klos, aksɛsri ɛn layfstayl tin dɛn. Aks wi wetin de naw ɛn di pris.">Clothing, accessories and lifestyle pieces. Ask us what is in stock today and the prices.</p>
@@ -326,8 +343,10 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
     <span class="h2k" lang="kri" data-kri="Where to find us" data-flip>Usai fɔ fɛn wi</span>
     <div class="card">
       <!-- EDIT: landmark -->
-      <p class="landmark" data-kri="CRS, Grafton, <em>nia Conex Fuel Station</em>.">CRS, Grafton, <em>by Conex Fuel Station</em>.</p>
+      <p class="landmark" data-kri="CRS, Grafton, <em>nia ICODEHS Central Mosque</em>, bay Conex Fuel Station.">CRS, Grafton, <em>near ICODEHS Central Mosque</em>, by Conex Fuel Station.</p>
+      <p class="pin"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span><span data-kri="Plɔs kod">Plus Code</span>: CR3M+J76 Freetown</span></p>
       <p class="tip" data-kri="Dis nɔto shɔp we yu go waka kam insay. Mɛsej wi fɔs, ɛn wi go sɛt pikɔp ɔ dilivri fɔ yu.">This is not a walk-in shop. Message us first and we will arrange pickup or delivery.</p>
+      <a class="btn dark" style="margin-top:12px" href="https://www.google.com/maps/dir/?api=1&amp;destination=8.404030,-13.166852" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg><span data-kri="Si di rod na Google Maps">Directions on Google Maps</span></a>
       <!-- EDIT: hours. Keep the JS "H" list in sync. -->
       <table id="hrs"><caption class="sr">Opening hours, Sierra Leone time (GMT)</caption>
         <tr><th scope="row" data-kri="Mɔnde">Monday</th><td>9 am to 7 pm</td></tr>

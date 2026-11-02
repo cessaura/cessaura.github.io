@@ -5,7 +5,7 @@ Plain HTML, CSS and a little vanilla JavaScript in one file. No framework, no bu
 
 ## Write-up
 
-CESSAURA is a French curls and fashion business in Grafton, Freetown, run by Cess for women who want full, bouncy curls at a fair price. The page keeps her white, black and gold brand with a vector version of her crown logo, and it is built around how her customers already buy: pick a colour from real photos of her bundles, choose 24 or 30 inch and how many packets, and the page writes the WhatsApp order with the total in Leones. The payment buttons dial Orange Money (#144#) or Afrimoney (*161#) in one tap, customers can also pay cash on delivery, the location is described by the Conex Fuel Station landmark, and the whole page switches to Krio with one tap. With no framework, no web fonts, a 2 KB logo and lazy-loaded WebP photos, a first visit is about 160 KB, the three short clips download only when someone taps play, and a service worker keeps the page working offline after the first visit.
+CESSAURA is a French curls and fashion business in Grafton, Freetown, run by Cess for women who want full, bouncy curls at a fair price. The page keeps her white, black and gold brand with a vector version of her crown logo, and it is built around how her customers already buy: pick a colour from real photos of her bundles, choose 24 or 30 inch and how many packets, and the page writes the WhatsApp order with the total in Leones. The payment buttons dial Orange Money (#144#) or Afrimoney (*161#) in one tap, customers can also pay cash on delivery, the location is described by the ICODEHS Central Mosque and Conex Fuel Station landmarks with a one-tap Google Maps link, and the whole page switches to Krio with one tap. With no framework, no web fonts, a 2 KB logo and lazy-loaded WebP photos, a first visit is about 160 KB, the three short clips download only when someone taps play, and a service worker keeps the page working offline after the first visit.
 
 ## Results (Lighthouse 12, mobile, measured 2 November 2026)
 
@@ -24,7 +24,8 @@ axe-core: 0 violations in English and Krio modes.
 - Three short clips of the curls (on a customer and two bundles), each loaded only when tapped (about 200 to 245 KB each)
 - Customer photos you can tap to see full size and swipe through, fashion and lifestyle enquiries, how to order in 4 steps
 - Orange Money and Afrimoney (copy the number, dial the menu in one tap, “I have paid” message) and cash on delivery
-- Landmark location (CRS, Grafton, by Conex Fuel Station), opening hours with today highlighted, and email
+- Meet Cess: the owner's photo with a direct WhatsApp button
+- Landmark location (CRS, Grafton, near ICODEHS Central Mosque, by Conex Fuel Station), Plus Code, Google Maps directions, opening hours with today highlighted, and email
 - Full English / Krio switch with `lang="kri"` for screen readers; sticky Call / Order / Pay bar
 
 ## Reuse it for your business
