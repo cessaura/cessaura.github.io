@@ -31,7 +31,7 @@ On the 3G test the first text appears after about 1.6 s and the main photo after
 - Orange Money and Afrimoney (copy the number, or tap to dial the menu), plus cash on delivery
 - A short "Meet Cess" section with her photo
 - Buttons to share the page and to save Cess's number to your phone
-- Directions from ICODEHS Central Mosque, a Plus Code, a Google Maps link, the opening hours and her email
+- Directions from ICODEHS Central Mosque and Conex Fuel Station (formerly Total), a Plus Code, a Google Maps link, the opening hours and her email
 - An English and Krio switch. Krio text is marked `lang="kri"` for screen readers.
 - A Call, Order and Pay bar that stays at the bottom of the screen
 
