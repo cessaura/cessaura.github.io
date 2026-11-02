@@ -24,7 +24,7 @@ axe-core: 0 violations in English and Krio modes.
 - Short clip of the curls, loaded only when tapped (240 KB)
 - Customer photos, fashion and lifestyle enquiries, how to order in 4 steps
 - Orange Money and Afrimoney (copy the number, dial the menu in one tap, “I have paid” message) and cash on delivery
-- Landmark location (CRS, Grafton, by Conex Fuel Station), opening hours with today highlighted
+- Landmark location (CRS, Grafton, by Conex Fuel Station), opening hours with today highlighted, and email
 - Full English / Krio switch with `lang="kri"` for screen readers; sticky Call / Order / Pay bar
 
 ## Reuse it for your business
