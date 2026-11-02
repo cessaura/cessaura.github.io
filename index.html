@@ -178,8 +178,10 @@ tr.today th{box-shadow:inset 4px 0 0 var(--gold2);font-weight:800}
 .owner b{display:block;font-family:Georgia,serif;font-size:1.25rem;color:var(--ink);font-weight:400;margin-bottom:4px}
 .pin{display:flex;gap:10px;align-items:flex-start;margin:12px 0 0;color:var(--mute);font-size:.95rem}
 .lux{margin-top:42px;padding:26px 18px;border-radius:22px;text-align:center;background:var(--black);color:#fff;border:2px solid var(--gold2)}
-.lux h2{color:var(--gold3)}
+.lux h2,.lux h2 em{color:var(--gold3)}
 .lux p{color:#e7dcc2;margin:8px 0 16px}
+.lux .btn.line{background:transparent;color:var(--gold3);border-color:var(--gold2)}
+.lux .row2{margin-top:0}
 footer{margin:30px 0 24px;text-align:center;color:var(--mute);font-size:.9rem}
 footer .k{font-family:Georgia,serif;font-style:italic;color:var(--gold);font-size:1rem}
 
@@ -363,6 +365,15 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
     </div>
   </section>
 
+  <section class="lux" aria-labelledby="h-share">
+    <h2 id="h-share" data-kri="Tɛl yu <em>padi dɛn</em>">Tell your <em>friends</em></h2>
+    <p data-kri="Sheb dis pej pan WhatsApp ɔ ɛni ap, ɔ sev Cess in nɔmba na yu fon.">Share this page on WhatsApp or any app, or save Cess's number to your phone.</p>
+    <div class="row2">
+      <button class="btn gold" type="button" id="share"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-share"/></svg><span data-kri="Sheb">Share</span></button>
+      <a class="btn line" id="vcf" download="CESSAURA.vcf" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3ACESSAURA%20(Cess%2C%20French%20curls)%0ATEL%3BTYPE%3DCELL%3A%2B23277794025%0AEMAIL%3Arugiatuswaray20%40icloud.com%0AURL%3Ahttps%3A%2F%2Fcessaura.github.io%2F%0AADR%3A%3B%3BCRS%2C%20near%20ICODEHS%20Central%20Mosque%3BGrafton%2C%20Freetown%3B%3B%3BSierra%20Leone%0AEND%3AVCARD"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-save"/></svg><span data-kri="Sev nɔmba">Save number</span></a>
+    </div>
+  </section>
+
   <footer>
     <p class="k" lang="kri">Tɛnki. Kam bak igen!</p>
     <p>© CESSAURA · Grafton, Freetown, Sierra Leone</p>
@@ -389,6 +400,8 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
   <symbol id="mono" viewBox="0 0 680 610"><path fill="url(#gg)" fill-rule="evenodd" d="M331 592C325 591 284 591 240 590C160 590 160 590 160 587C160 585 160 584 165 584C176 582 184 580 192 576C206 569 215 561 209 561C208 561 205 560 203 559C200 558 193 555 186 553C153 540 122 521 99 500C70 474 49 446 37 418C35 415 33 410 32 407C31 405 30 403 30 402C30 401 29 399 28 397C13 363 8 300 17 256C25 216 42 172 61 147C64 144 68 138 72 133C88 111 111 91 138 73C149 65 186 46 196 43C198 42 204 40 208 39C211 37 217 35 220 34C223 34 227 32 228 32C245 27 266 23 286 21C347 13 425 25 484 50C500 57 508 61 508 62C509 63 508 65 500 80C496 87 491 96 488 102C481 117 478 121 477 121C476 121 472 116 472 115C472 114 471 112 469 110C436 58 381 28 318 28C208 28 128 103 103 232C87 313 101 409 135 460C136 463 138 465 138 466C139 467 150 484 154 488C175 514 193 530 216 543C219 545 221 547 221 548C221 555 232 538 243 516C253 494 251 496 262 494C275 492 275 492 271 502C265 520 263 545 267 554C273 569 274 569 283 573C320 585 369 586 406 575C421 571 439 563 446 558C447 557 449 555 452 553C461 546 467 539 474 531C482 519 484 519 479 529C460 570 398 597 331 592ZM468 588C467 586 468 585 477 583C499 579 509 571 509 556C509 548 504 535 492 508C491 505 490 503 490 502C490 502 488 499 486 494C480 481 478 477 467 452C461 438 454 423 452 418C442 397 439 388 442 388C442 388 443 388 443 387C443 386 444 386 444 386C445 386 446 385 447 385C448 384 450 383 451 383C453 382 454 379 452 379C451 379 450 380 449 380C448 381 446 382 445 382C444 383 443 384 443 384C443 385 442 385 442 385C441 385 440 386 440 386C440 387 439 388 438 388C435 388 424 396 394 420C368 439 351 452 345 456C344 456 340 458 337 461C321 471 296 482 282 486C261 491 260 491 242 491C210 491 183 483 162 468C154 462 155 461 166 465C188 471 215 472 240 466C263 459 298 440 323 421C327 418 331 414 335 412C337 410 348 402 360 393C388 372 405 360 420 352C425 350 427 347 424 347C422 347 422 346 409 316C405 307 399 295 397 290C395 285 393 281 393 281C393 280 391 276 389 271C386 266 383 258 381 255C378 248 376 246 375 248C374 250 361 278 354 294C352 300 349 307 348 309C347 311 344 316 343 320C341 324 337 334 333 343C327 357 317 380 312 392C311 394 308 401 305 407C303 413 300 420 299 422C297 429 277 443 256 452C247 456 246 455 254 450C265 444 278 434 280 430C281 427 286 415 292 402C298 390 303 377 305 373C307 370 308 367 308 367C308 366 310 361 313 355C316 349 320 342 321 338C323 335 324 332 324 332C324 331 327 324 332 315C336 307 339 300 339 300C339 299 341 295 344 289C350 276 370 230 383 201L393 180L405 179C417 179 420 180 420 183C420 184 433 213 443 232C452 253 456 262 466 282C471 294 477 306 478 310L481 317L496 316C511 316 525 317 533 319C541 321 537 322 520 321C496 321 473 325 450 335C438 339 437 343 448 339C517 312 592 325 632 370C636 375 640 379 641 379C652 392 658 419 652 432C649 439 648 438 648 428C649 369 559 333 484 363C482 364 476 367 472 368C468 370 463 372 462 373C461 374 460 375 459 375C458 375 458 376 458 376C458 377 459 378 460 378C460 378 461 378 461 377C461 376 462 376 463 376C463 376 466 375 469 373C477 370 497 362 500 362C501 362 503 365 509 378C513 387 519 399 521 405C524 411 527 418 529 421C530 424 534 433 538 440C541 447 546 459 549 465C582 539 592 556 610 569C619 576 641 584 652 584C656 584 658 586 657 588C656 591 469 591 468 588ZM374 180C373 179 373 176 373 174C371 164 361 149 352 145C350 144 349 142 349 142C349 140 360 141 365 144C371 147 371 147 373 140C375 132 375 132 381 138C387 144 387 144 384 147C379 153 383 162 392 162C409 162 413 146 399 133C395 129 395 128 402 116C407 106 414 90 414 87C414 84 417 88 420 97C422 102 426 112 430 118L435 129L431 133C418 147 421 162 437 162C447 162 453 152 447 147C443 145 443 144 447 141C449 140 451 138 452 136C455 131 456 132 459 143C459 147 459 147 465 144C473 140 487 140 479 144C477 145 476 146 476 147C476 148 475 148 475 148C473 148 466 155 466 157C466 157 466 158 465 158C464 158 459 170 458 176C458 182 457 182 450 179C433 172 403 172 384 178C374 181 374 181 374 180Z"/></symbol>
   <symbol id="ic-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3Z"/></symbol>
   <symbol id="ic-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.6L4.4 7v10.2h15.2V7Zm0-2.2L18.6 6.8H5.4Z"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1Z"/></symbol>
+  <symbol id="ic-save" viewBox="0 0 24 24"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-3.3 0-8 1.7-8 5v1h11v-2h2v-2h2v-.4c-1.8-.9-4.5-1.6-7-1.6Zm7 0v2h2v2h-2v2h-2v-2h-2v-2h2v-2h2Z"/></symbol>
   <symbol id="ic-call" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
 </svg>
 
@@ -402,11 +415,11 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
     en:{open:"Taking orders now",closed:"Closed",closes:"until ",opens:"replies from ",today:"today",tomorrow:"tomorrow",
       days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],copied:"Copied",copy:"Copy",packet:"packet",packets:"packets",
       hi:"Hello "+BIZ+", ",gen:"I want to order French curls.",fash:"what fashion pieces do you have today?",paid:"I have paid. Here is my screenshot.",pick:"where can I pick up my order?",
-      order:"I want to order French curls:\n• Colour: {c}\n• Length: {l}\n• Packets: {q}\n• Total: Le {t}",colour:"Colour",choose:"Choose this colour",look:"CESSAURA curls",orderThese:"Order these curls"},
+      order:"I want to order French curls:\n• Colour: {c}\n• Length: {l}\n• Packets: {q}\n• Total: Le {t}",colour:"Colour",choose:"Choose this colour",share:"CESSAURA French curls in Grafton: 8 colours, 24 and 30 inch, Le 110 per packet. Order on WhatsApp here: ",look:"CESSAURA curls",orderThese:"Order these curls"},
     kri:{open:"Wi de tek oda naw",closed:"Wi lɔk",closes:"te ",opens:"wi go ansa ",today:"tide",tomorrow:"tumara",
       days:["Sɔnde","Mɔnde","Tyuzde","Wɛnzde","Tɔzde","Fraide","Satide"],copied:"A dɔn kɔpi am",copy:"Kɔpi",packet:"pakɛt",packets:"pakɛt",
       hi:"Kushɛ "+BIZ+", ",gen:"a want fɔ oda French curls.",fash:"wetin fashɔn tin dɛn de tide?",paid:"a dɔn pe. Na mi skrinshɔt dis.",pick:"usai a go kam tek mi oda?",
-      order:"a want fɔ oda French curls:\n• Kɔlɔ: {c}\n• Aw lɔng: {l}\n• Pakɛt: {q}\n• Ɔltogɛda: Le {t}",colour:"Kɔlɔ",choose:"Pik dis kɔlɔ",look:"CESSAURA curls",orderThese:"Oda dis curls"}
+      order:"a want fɔ oda French curls:\n• Kɔlɔ: {c}\n• Aw lɔng: {l}\n• Pakɛt: {q}\n• Ɔltogɛda: Le {t}",colour:"Kɔlɔ",choose:"Pik dis kɔlɔ",share:"CESSAURA French curls na Grafton: 8 kɔlɔ, 24 ɛn 30 inch, Le 110 fɔ wan pakɛt. Oda pan WhatsApp ya: ",look:"CESSAURA curls",orderThese:"Oda dis curls"}
   };
   var lang="en",$=function(id){return document.getElementById(id)};
   function t12(h){return (h>12?h-12:h)+(h<12?" am":" pm")}
@@ -500,6 +513,13 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
   $("lb-x").onclick=function(){lb.close()};
   lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
   lb.addEventListener("close",function(){media(false);if(mode==="colour"&&cur)cur.focus();else if(last)last.focus()});
+
+  /* share with friends: phone share sheet, else WhatsApp */
+  $("share").addEventListener("click",function(){
+    var u="https://cessaura.github.io/",txt=T[lang].share;
+    if(navigator.share)navigator.share({title:BIZ,text:txt,url:u}).catch(function(){});
+    else location.href="https://wa.me/?text="+encodeURIComponent(txt+u);
+  });
 
   var bar=$("bar");
   if("IntersectionObserver" in window)new IntersectionObserver(function(e){bar.classList.toggle("hide",e[0].isIntersecting)}).observe($("hero-cta"));

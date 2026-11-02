@@ -25,6 +25,7 @@ axe-core: 0 violations in English and Krio modes.
 - Customer photos you can tap to see full size and swipe through, fashion and lifestyle enquiries, how to order in 4 steps
 - Orange Money and Afrimoney (copy the number, dial the menu in one tap, “I have paid” message) and cash on delivery
 - Meet Cess: the owner's photo with a direct WhatsApp button
+- Tell your friends: share the page through WhatsApp or any app, or save Cess's number as a contact
 - Landmark location (CRS, Grafton, near ICODEHS Central Mosque, by Conex Fuel Station), Plus Code, Google Maps directions, opening hours with today highlighted, and email
 - Full English / Krio switch with `lang="kri"` for screen readers; sticky Call / Order / Pay bar
 
