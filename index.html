@@ -120,6 +120,24 @@ legend .n{display:grid;place-items:center;width:26px;height:26px;border-radius:5
 .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.55));border:0;cursor:pointer;color:#fff;font:inherit}
 .play>span{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--metal);color:#1a1205;font-weight:800}
 .play[hidden]{display:none}
+.zb{position:absolute;right:8px;bottom:8px;width:34px;height:34px;border-radius:50%;background:rgba(15,13,10,.75);color:var(--gold3);display:grid;place-items:center;border:1.5px solid rgba(242,207,115,.7)}
+.zb svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.ph{all:unset;position:relative;display:block;cursor:zoom-in;border-radius:14px}
+.ph:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hint{color:var(--gold);font-weight:700;font-size:.95rem;margin:0 0 12px}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;list-style:none;padding:0;margin:0}
+.clip{all:unset;position:relative;display:block;cursor:pointer;border-radius:14px;overflow:hidden;border:2px solid transparent;background:var(--metal) border-box}
+.clip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.clip img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px}
+.clip .pl{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--metal);display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.clip .pl svg{width:22px;height:22px;fill:#1a1205;margin-left:3px}
+.clip small{position:absolute;left:6px;right:6px;bottom:6px;color:#fff;font-weight:700;font-size:.72rem;text-shadow:0 1px 3px #000;text-align:center}
+.stage{position:relative;background:#000}
+dialog .stage img,dialog video{width:100%;max-height:70vh;object-fit:contain;aspect-ratio:auto;background:#000;display:block;touch-action:pan-y}
+dialog [hidden]{display:none!important}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer}
+.nav.p{left:8px}.nav.n2{right:8px}
+.count{position:absolute;left:10px;top:12px;padding:2px 10px;border-radius:999px;background:rgba(0,0,0,.65);color:#fff;font-size:.85rem;font-weight:700}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;list-style:none;padding:0;margin:0}
 .gal img{border-radius:14px;aspect-ratio:3/4;object-fit:cover;width:100%}
 
@@ -191,7 +209,7 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
   <p class="kri-line" lang="kri">Yu buti, yu aura.</p>
   <p class="status" id="status" role="status" aria-live="polite"><span class="dot" aria-hidden="true"></span><span id="status-t" data-kri="Wi de tek oda Mɔnde to Satide">Taking orders Monday to Saturday</span></p>
   <div class="show">
-    <img src="img/hero.webp" width="420" height="560" alt="Smiling customer in a white top wearing long dark French curls" fetchpriority="high">
+    <button class="ph" type="button" data-set="look" data-full="img/hero-full.webp" aria-label="See this photo full size"><img src="img/hero.webp" width="420" height="560" alt="Smiling customer in a white top wearing long dark French curls" fetchpriority="high"><span class="zb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg></span></button>
     <span class="len">24" · 30"</span>
     <p class="tag"><small data-kri="French curls">French curls</small><b>Le 110</b><span data-kri="fɔ wan pakɛt">per packet</span></p>
   </div>
@@ -248,19 +266,22 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
   <section aria-labelledby="h-vid">
     <h2 id="h-vid" data-kri="Si aw dɛn de <em>bawns</em>">See the <em>bounce</em></h2>
     <span class="h2k" lang="kri" data-kri="See the bounce" data-flip>Si aw dɛn de bawns</span>
-    <div class="vid">
-      <video id="vid" src="img/curls.mp4" poster="img/curls-poster.webp" preload="none" playsinline muted loop width="360" height="640" aria-label="Short clip of a customer showing her long dark French curls"></video>
-      <button class="play" id="play" type="button"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-kri="Plɛ di vidio (240 KB)">Play clip (240 KB)</span></span></button>
-    </div>
+    <p class="hint" data-kri="▶ Tap wan fɔ plɛ am. Ɛni wan de lod onli we yu tap am (lɛk 240 KB).">▶ Tap a clip to play it. Each one loads only when you tap (about 240 KB).</p>
+    <ul class="clips">
+      <li><button class="clip" type="button" data-video="img/v1.mp4" data-label="Customer showing long dark French curls" aria-label="Play clip: Customer showing long dark French curls"><img src="img/v1.webp" width="216" height="384" alt="" loading="lazy" decoding="async"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><small data-kri="Kɔstɔma we gɛt lɔng dak curls">On a customer</small></button></li>
+      <li><button class="clip" type="button" data-video="img/v2.mp4" data-label="Close-up of a brown and blonde French curls bundle moving" aria-label="Play clip: Close-up of a brown and blonde French curls bundle moving"><img src="img/v2.webp" width="216" height="384" alt="" loading="lazy" decoding="async"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><small data-kri="Klos luk pan brawn ɛn blɔnd curls">Brown and blonde</small></button></li>
+      <li><button class="clip" type="button" data-video="img/v3.mp4" data-label="Close-up of a dark brown French curls bundle moving" aria-label="Play clip: Close-up of a dark brown French curls bundle moving"><img src="img/v3.webp" width="216" height="384" alt="" loading="lazy" decoding="async"><span class="pl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><small data-kri="Klos luk pan dak brawn curls">Dark brown</small></button></li>
+    </ul>
   </section>
 
   <section aria-labelledby="h-gal">
     <h2 id="h-gal" data-kri="Wi <em>kɔstɔma</em> dɛn">Our <em>customers</em></h2>
     <span class="h2k" lang="kri" data-kri="Our customers" data-flip>Wi kɔstɔma dɛn</span>
+    <p class="hint" data-kri="🔍 Tap eni foto fɔ si am ful. Swayp fɔ si di nɛks wan.">🔍 Tap any photo to see it full size. Swipe for the next one.</p>
     <ul class="gal">
-      <li><img src="img/cust1.webp" width="240" height="320" alt="Customer in a yellow African print dress with honey blonde curls" loading="lazy" decoding="async"></li>
-      <li><img src="img/cust2.webp" width="240" height="320" alt="Customer with copper brown braids and curls in an African print top" loading="lazy" decoding="async"></li>
-      <li><img src="img/cust3.webp" width="240" height="320" alt="Customer with braids and curls in a bright floral top" loading="lazy" decoding="async"></li>
+      <li><button class="ph" type="button" data-set="look" data-full="img/cust1-full.webp" aria-label="See photo 2 full size"><img src="img/cust1.webp" width="240" height="320" alt="Customer in a yellow African print dress with honey blonde curls" loading="lazy" decoding="async"><span class="zb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg></span></button></li>
+      <li><button class="ph" type="button" data-set="look" data-full="img/cust2-full.webp" aria-label="See photo 3 full size"><img src="img/cust2.webp" width="240" height="320" alt="Customer with copper brown braids and curls in an African print top" loading="lazy" decoding="async"><span class="zb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg></span></button></li>
+      <li><button class="ph" type="button" data-set="look" data-full="img/cust3-full.webp" aria-label="See photo 4 full size"><img src="img/cust3.webp" width="240" height="320" alt="Customer with braids and curls in a bright floral top" loading="lazy" decoding="async"><span class="zb" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5M10.5 8v5M8 10.5h5"/></svg></span></button></li>
     </ul>
   </section>
 
@@ -336,8 +357,11 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
 
 <dialog id="lb" aria-labelledby="lb-t">
   <button class="x" type="button" id="lb-x" aria-label="Close">×</button>
-  <img id="lb-img" src="data:," alt="" width="360" height="480">
-  <div class="bd"><h3 id="lb-t"></h3><p id="lb-p"></p><button class="btn wa" type="button" id="lb-pick" style="width:100%"><span data-kri="Pik dis kɔlɔ">Choose this colour</span></button></div>
+  <div class="stage"><img id="lb-img" src="data:," alt="" width="360" height="480"><video id="lb-vid" playsinline controls loop hidden width="360" height="640"></video>
+    <span class="count" id="lb-c" hidden></span>
+    <button class="nav p" type="button" id="lb-prev" aria-label="Previous photo" hidden>‹</button>
+    <button class="nav n2" type="button" id="lb-next" aria-label="Next photo" hidden>›</button></div>
+  <div class="bd"><h3 id="lb-t"></h3><p id="lb-p"></p><button class="btn wa" type="button" id="lb-pick" style="width:100%"><span id="lb-pl">Choose this colour</span></button></div>
 </dialog>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -357,11 +381,11 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
     en:{open:"Taking orders now",closed:"Closed",closes:"until ",opens:"replies from ",today:"today",tomorrow:"tomorrow",
       days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],copied:"Copied",copy:"Copy",packet:"packet",packets:"packets",
       hi:"Hello "+BIZ+", ",gen:"I want to order French curls.",fash:"what fashion pieces do you have today?",paid:"I have paid. Here is my screenshot.",pick:"where can I pick up my order?",
-      order:"I want to order French curls:\n• Colour: {c}\n• Length: {l}\n• Packets: {q}\n• Total: Le {t}",colour:"Colour",choose:"Choose this colour"},
+      order:"I want to order French curls:\n• Colour: {c}\n• Length: {l}\n• Packets: {q}\n• Total: Le {t}",colour:"Colour",choose:"Choose this colour",look:"CESSAURA curls",orderThese:"Order these curls"},
     kri:{open:"Wi de tek oda naw",closed:"Wi lɔk",closes:"te ",opens:"wi go ansa ",today:"tide",tomorrow:"tumara",
       days:["Sɔnde","Mɔnde","Tyuzde","Wɛnzde","Tɔzde","Fraide","Satide"],copied:"A dɔn kɔpi am",copy:"Kɔpi",packet:"pakɛt",packets:"pakɛt",
       hi:"Kushɛ "+BIZ+", ",gen:"a want fɔ oda French curls.",fash:"wetin fashɔn tin dɛn de tide?",paid:"a dɔn pe. Na mi skrinshɔt dis.",pick:"usai a go kam tek mi oda?",
-      order:"a want fɔ oda French curls:\n• Kɔlɔ: {c}\n• Aw lɔng: {l}\n• Pakɛt: {q}\n• Ɔltogɛda: Le {t}",colour:"Kɔlɔ",choose:"Pik dis kɔlɔ"}
+      order:"a want fɔ oda French curls:\n• Kɔlɔ: {c}\n• Aw lɔng: {l}\n• Pakɛt: {q}\n• Ɔltogɛda: Le {t}",colour:"Kɔlɔ",choose:"Pik dis kɔlɔ",look:"CESSAURA curls",orderThese:"Oda dis curls"}
   };
   var lang="en",$=function(id){return document.getElementById(id)};
   function t12(h){return (h>12?h-12:h)+(h<12?" am":" pm")}
@@ -419,21 +443,42 @@ dialog p{margin:4px 0 12px;color:var(--mute)}
     if(navigator.clipboard)navigator.clipboard.writeText(v).then(done,function(){prompt("",v)});else prompt("",v);
   })});
 
-  /* colour zoom */
-  var lb=$("lb"),cur=null;
+  /* one viewer for colours, photos and clips */
+  var lb=$("lb"),im=$("lb-img"),vd=$("lb-vid"),cur=null,last=null,mode="",set=[],idx=0;
+  function nav(on){["lb-prev","lb-next","lb-c"].forEach(function(id){$(id).hidden=!on})}
+  function media(isVid){im.hidden=isVid;vd.hidden=!isVid;if(!isVid){vd.pause();vd.removeAttribute("src");vd.load()}}
+  function open(){if(!lb.open)lb.showModal()}
   document.querySelectorAll(".zoomb").forEach(function(b){b.addEventListener("click",function(e){
-    e.preventDefault();e.stopPropagation();var lab=b.closest("label"),inp=lab.querySelector("input"),im=lab.querySelector("img");
+    e.preventDefault();e.stopPropagation();var lab=b.closest("label"),inp=lab.querySelector("input"),th=lab.querySelector("img");
     if(!lb.showModal){window.open(b.getAttribute("data-full"));return}
-    cur=inp;$("lb-img").src=im.src;$("lb-img").src=b.getAttribute("data-full");$("lb-img").alt=im.alt;
-    $("lb-t").textContent=T[lang].colour+" "+inp.value;$("lb-p").textContent=lab.querySelector("small").textContent;lb.showModal();
+    mode="colour";cur=inp;last=b;media(false);nav(false);im.src=th.src;im.src=b.getAttribute("data-full");im.alt=th.alt;
+    $("lb-t").textContent=T[lang].colour+" "+inp.value;$("lb-p").textContent=lab.querySelector("small").textContent;$("lb-pl").textContent=T[lang].choose;open();
   })});
-  $("lb-pick").onclick=function(){if(cur){cur.checked=true;upd()}lb.close()};
+  set=[].slice.call(document.querySelectorAll('.ph[data-set="look"]'));
+  function showLook(i){
+    idx=(i+set.length)%set.length;var b=set[idx],th=b.querySelector("img"),full=b.getAttribute("data-full");
+    im.src=th.src;var hi=new Image();hi.onload=function(){if(set[idx]===b)im.src=full};hi.src=full;im.alt=th.alt;
+    $("lb-t").textContent=T[lang].look;$("lb-p").textContent=th.alt;$("lb-c").textContent=(idx+1)+" / "+set.length;$("lb-pl").textContent=T[lang].orderThese;
+  }
+  set.forEach(function(b,i){b.addEventListener("click",function(){
+    if(!lb.showModal){window.open(b.getAttribute("data-full"));return}
+    mode="look";last=b;media(false);nav(true);showLook(i);open()})});
+  $("lb-prev").onclick=function(){showLook(idx-1)};
+  $("lb-next").onclick=function(){showLook(idx+1)};
+  var x0=null;
+  im.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+  im.addEventListener("touchend",function(e){if(mode!=="look"||x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)showLook(idx+(dx<0?1:-1));x0=null});
+  lb.addEventListener("keydown",function(e){if(mode!=="look")return;if(e.key==="ArrowRight")showLook(idx+1);if(e.key==="ArrowLeft")showLook(idx-1)});
+  document.querySelectorAll(".clip").forEach(function(b){b.addEventListener("click",function(){
+    var src=b.getAttribute("data-video");if(!lb.showModal){window.open(src);return}
+    mode="clip";last=b;nav(false);media(true);vd.poster=b.querySelector("img").src;vd.src=src;vd.setAttribute("aria-label",b.getAttribute("data-label"));
+    $("lb-t").textContent=b.querySelector("small").textContent;$("lb-p").textContent=b.getAttribute("data-label");$("lb-pl").textContent=T[lang].orderThese;
+    open();vd.play().catch(function(){});
+  })});
+  $("lb-pick").onclick=function(){if(mode==="colour"&&cur){cur.checked=true;upd()}lb.close();if(mode!=="colour"){location.hash="";location.hash="order"}};
   $("lb-x").onclick=function(){lb.close()};
   lb.addEventListener("click",function(e){if(e.target===lb)lb.close()});
-  lb.addEventListener("close",function(){if(cur)cur.focus()});
-
-  /* video loads only when tapped */
-  $("play").onclick=function(){var v=$("vid");this.hidden=true;v.controls=true;v.play().catch(function(){})};
+  lb.addEventListener("close",function(){media(false);if(mode==="colour"&&cur)cur.focus();else if(last)last.focus()});
 
   var bar=$("bar");
   if("IntersectionObserver" in window)new IntersectionObserver(function(e){bar.classList.toggle("hide",e[0].isIntersecting)}).observe($("hero-cta"));
